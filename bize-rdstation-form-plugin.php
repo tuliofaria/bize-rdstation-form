@@ -13,7 +13,7 @@ function __construct() {
         __( 'Bize RDStation Form', 'bize_rdstation_form' ),
         array(
             'classname'   => 'bize_rdstation_form',
-            'description' => __( 'A basic text widget to demo the Tutsplus series on creating your own widgets.', 'bize_rdstation_form' )
+            'description' => __( 'Widget para Wordpress para criar um formulário de subscribe no wordpress.', 'bize_rdstation_form' )
         )
     );
 }
@@ -120,8 +120,8 @@ public function form( $instance ) {
 	add_action( 'widgets_init', 'wpb_load_widget' );
 
 	function add_js(){
-		wp_enqueue_script('rdstation', 'https://d335luupugsy2.cloudfront.net/js/integration/stable/rd-js-integration.min.js', array(), '1.0.0', false);
-		wp_enqueue_script('bize-rdstation-script', plugin_dir_url( __FILE__ ) . '/bize-rd.js', array('jquery', 'rdstation'));
+		wp_enqueue_script('rdstation', plugin_dir_url( __FILE__ ) . 'rd-js-integration.min.js', array(), '1.0.0', false);
+		wp_enqueue_script('bize-rdstation-script', plugin_dir_url( __FILE__ ) . 'bize-rd.js', array('jquery', 'rdstation'));
 	}
 	add_action('wp_enqueue_scripts', 'add_js');
 ?>
